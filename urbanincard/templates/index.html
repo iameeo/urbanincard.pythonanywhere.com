@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title>「어반인카드」 여기서 하길 참말로 잘했다.</title>
+	<meta charset="utf-8" />
+	<meta name="author" content="「어반인카드」 여기서 하길 참말로 잘했다." />
+	<meta name="description" content="모바일청첩장이 감성적인, 어반인카드" />
+	<meta name="keywords" content="#모바일청첩장,#이미지청첩장,#웨딩청첩장,#웨딩모바일청첩장,#모바일웨딩,#모바일웨딩청첩장,#깔끔한청첩장,#심플한청첩장,#저렴한,#저렴한청첩장" />
+	<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<!-- og -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="「어반인카드」 여기서 하길 참말로 잘했다.">
+	<meta property="og:image" content="http://urbanincard.pythonanywhere.com/media/logo.jpg">
+	<meta property="og:url" content="http://urbanincard.pythonanywhere.com/">
+	<meta property="og:description" content="모바일청첩장이 감성적인, 어반인카드">
+	<meta property="og:locale" content="ko_KR">
+	<meta property="og:image:width" content="500">
+	<meta property="og:image:height" content="500">
+
+	<!-- tw -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="「어반인카드」 여기서 하길 참말로 잘했다.">
+	<meta name="twitter:image" content="http://urbanincard.pythonanywhere.com/media/logo.jpg">
+	<meta name="twitter:description" content="모바일청첩장이 감성적인, 어반인카드">
+
+	<!-- js -->
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c8dcf002e3cb41a603da7f0d485b5f0b"></script>
+	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- style -->
+	<style>
+		@import url("https://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+		*{padding:0px;margin:0px;font-size:12px;font-family: "Nanum Gothic", sans-serif;}
+		body{}
+		a {text-decoration: none;}
+
+		<!-- swiper Demo styles -->
+		html, body {
+		  position: relative;
+		  height: 100%;
+		}
+		body {
+		  background: #eaeaea;
+		  font-size: 14px;
+		  color:#000;
+		  margin: 0;
+		  padding: 0;
+		}
+		.swiper-container {
+		  width: 100%;
+		  height: 100%;
+		}
+		.swiper-slide {
+		  text-align: center;
+		  font-size: 18px;
+		  background: #fff;
+		  /* Center slide text vertically */
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: -webkit-flex;
+		  display: flex;
+		  -webkit-box-pack: center;
+		  -ms-flex-pack: center;
+		  -webkit-justify-content: center;
+		  justify-content: center;
+		  -webkit-box-align: center;
+		  -ms-flex-align: center;
+		  -webkit-align-items: center;
+		  align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<a href="javascript:kakaoShare();" id="kakao-link-btn" style="display:none;">
+	</a>
+	<!-- wrap start -->
+	<div class="wrap">
+		<div class="header">
+			<!--<a href="/">MAIN</a>-->
+		</div>
+		<div class="contents">
+<style>
+	body{background-color:#fff;}
+	input {width:305px;padding:10px 5px;margin:5px 0px;border:1px solid #eaeaea;-webkit-appearance: none;   -webkit-border-radius: 0;}
+	td{text-align:left;}
+
+	.label{font-size:12px;color:#000;font-weight:normal;}
+</style>
+
+<div style="width:320px;margin:0 auto;text-align:center;padding:10px;">
+	<form action="" method="POST" enctype="multipart/form-data">
+	    {% csrf_token %}
+		<input type="hidden" name="o_orddate" value="2000-01-01" />
+		<input type="hidden" name="m_email" value="test@naver.com" />
+		<input type="hidden" name="m_phone" value="000-0000-0000" />
+
+		<input type="hidden" name="t_shop" value="{{ request.GET.t_shop }}" />
+		<input type="hidden" name="t_seq" value="{{ request.GET.t_seq }}" />
+
+		<table border='0' width='100%' cellpadding='0' cellspacing='0'>
+		<tr>
+			<td><img src="https://shop-phinf.pstatic.net/20190824_74/ncp_1noygk_01_1566610931376ayLsD_JPEG/54665007578302011_462928582.jpg?type=w345" style="width:150px;" /></td>
+		</tr>
+		<tr>
+			<td><span style="font-weight:bold;background-color:#eaeaea;">어반인카드 주문서</span></td>
+		</tr>
+		<tr>
+			<td class="label">주문자명</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='order_name' placeholder="김도진"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">신랑명</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='man_name' placeholder="김도진"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">신부명</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='woman_name' placeholder="이나영"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">신랑혼주</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='man_parent' placeholder="김주원 / 박재연"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">신부혼주</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='woman_parent' placeholder="이현빈 / 김하연"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">결혼식장</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='address' placeholder="W스퀘어"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">결혼식날짜</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='weddingdate' placeholder="2019-09-20"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">결혼식시간</td>
+		</tr>
+		<tr>
+			<td><input type='text' name='weddingtime' placeholder="AM 12:00"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">첨부파일</td>
+		</tr>
+		<tr>
+			<td><input type="file" name="file1" id="file1"></td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td class="label">문의내용</td>
+		</tr>
+		<tr>
+			<td>
+				<textarea name="etc" style="width:100%;height:100px;border:1px solid #eaeaea;"></textarea>
+			</td>
+		</tr>
+		<tr> <td>&nbsp;</td> </tr>
+		<tr>
+			<td><input type='submit' name='REGISTER' value="신청하기" style="background-color:#f9c704;border:0px;width:100%;"></td>
+		</tr>
+
+		</table>
+	</form>
+</div>
+
+		</div>
+	</div>
+	<!-- wrap end -->
+</body>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124498612-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124498612-2');
+</script>
+</html>
