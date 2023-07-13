@@ -1,6 +1,7 @@
 from flask import Flask, request, redirect
 from flask import render_template
 from flask_mail import Mail, Message
+from datetime import date
 import requests
 
 app = Flask(__name__)
@@ -22,7 +23,8 @@ def test(urlPath):
 @app.route('/', methods = ["get"])
 def Index():
     path = 'Index'
-    return render_template('Index.html', path=path)
+    today = date.today().year
+    return render_template('Index.html', path=path, today=today)
     
 @app.route('/', methods = ["post"])
 def IndexPost():

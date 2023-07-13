@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<title>{{path}} | 어반인카드</title>
+		<title>{{path}} :: 어반인카드</title>
 	
 		<!-- css -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,10 @@
 			<div class="nav">
 				<ul>
 					<li><a href="{{url_for('Index')}}" {% if path == 'Index' %} class="active" {% endif %}>홈</a></li>
+					<li><a href="{{url_for('Index')}}" {% if path == 'Wedding' %} class="active" {% endif %}>모바일 초대장</a></li>
+					<li><a href="{{url_for('Index')}}" {% if path == 'Baby' %} class="active" {% endif %}>돌잔치 초대장</a></li>
+					<li><a href="{{url_for('Index')}}" {% if path == 'Event' %} class="active" {% endif %}>행사 초대장</a></li>
+					<li><a href="{{url_for('Index')}}" {% if path == 'Thanks' %} class="active" {% endif %}>모바일 감사장</a></li>
 				</ul>
 			</div>
 			<div class="contents">
@@ -26,8 +30,8 @@
 				{% endblock %}
 			</div>
 			<div class="footer">
-				<div style="padding:10px 0px;">
-					footer https://winkberry.github.io/portfolio/ https://www.kakaocorp.com/
+				<div style="padding:20px 0px;text-align:center;">
+					© {{today}} URBAN-INCARD. All rights reserved.
 				</div>
 			</div>
 		 </div>
