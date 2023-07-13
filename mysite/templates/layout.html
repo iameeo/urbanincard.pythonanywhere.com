@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>{{path}} | IAM.EEO</title>
+	
+		<!-- css -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&display=swap" rel="stylesheet">
+		
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}"/>
+		
+		<!-- js -->
+        <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    </head>
+    <body>
+         <div class="wrap">
+			<div class="nav">
+				<ul>
+					<li><a href="{{url_for('Index')}}" {% if path == 'Index' %} class="active" {% endif %}>홈</a></li>
+				</ul>
+			</div>
+			<div class="contents">
+				{% block content %}
+				
+				{% endblock %}
+			</div>
+			<div class="footer">
+				<div style="padding:10px 0px;">
+					footer https://winkberry.github.io/portfolio/ https://www.kakaocorp.com/
+				</div>
+			</div>
+		 </div>
+    </body>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-09JZSKV7PG"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-09JZSKV7PG');
+	</script>
+</html>
