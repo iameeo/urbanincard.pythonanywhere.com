@@ -14,6 +14,11 @@ app.config["MAIL_USE_SSL"] = True
 
 email = Mail(app)
 
+@app.route('/test/<urlPath>', methods = ["get"])
+def test(urlPath):
+    path = 'test'
+    return render_template(urlPath + '.html', path=path)
+
 @app.route('/', methods = ["get"])
 def Index():
     path = 'Index'
