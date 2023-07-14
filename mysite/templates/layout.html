@@ -2,7 +2,33 @@
 <html>
     <head>
 		<title>{{path}} :: 어반인카드</title>
+		<meta charset="utf-8" />
+		<meta name="author" content="「어반인카드」 여기서 하길 참말로 잘했다." />
+		<meta name="description" content="모바일청첩장이 감성적인, 어반인카드" />
+		<meta name="keywords" content="#모바일청첩장,#이미지청첩장,#웨딩청첩장,#웨딩모바일청첩장,#모바일웨딩,#모바일웨딩청첩장,#깔끔한청첩장,#심플한청첩장,#저렴한,#저렴한청첩장" />
+		{% if request.MOBILE %}
+			<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+		{% endif %}
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	
+		<!-- og -->
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="「어반인카드」 여기서 하길 참말로 잘했다.">
+		<meta property="og:image" content="http://urbanincard.pythonanywhere.com/media/logo.jpg">
+		<meta property="og:url" content="http://urbanincard.pythonanywhere.com/">
+		<meta property="og:description" content="모바일청첩장이 감성적인, 어반인카드">
+		<meta property="og:locale" content="ko_KR">
+		<meta property="og:image:width" content="500">
+		<meta property="og:image:height" content="500">
+	
+		<!-- tw -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="「어반인카드」 여기서 하길 참말로 잘했다.">
+		<meta name="twitter:image" content="http://urbanincard.pythonanywhere.com/media/logo.jpg">
+		<meta name="twitter:description" content="모바일청첩장이 감성적인, 어반인카드">
+
 		<!-- css -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +44,10 @@
 			<div class="nav">
 				<ul>
 					<li><a href="{{url_for('Index')}}" {% if path == 'Index' %} class="active" {% endif %}>홈</a></li>
-					<li><a href="{{url_for('Index')}}" {% if path == 'Wedding' %} class="active" {% endif %}>모바일 초대장</a></li>
-					<li><a href="{{url_for('Index')}}" {% if path == 'Baby' %} class="active" {% endif %}>돌잔치 초대장</a></li>
-					<li><a href="{{url_for('Index')}}" {% if path == 'Event' %} class="active" {% endif %}>행사 초대장</a></li>
-					<li><a href="{{url_for('Index')}}" {% if path == 'Thanks' %} class="active" {% endif %}>모바일 감사장</a></li>
+					<li><a href="{{url_for('Wedding')}}" {% if path == 'Wedding' %} class="active" {% endif %}>모바일 초대장</a></li>
+					<li><a href="{{url_for('Baby')}}" {% if path == 'Baby' %} class="active" {% endif %}>돌잔치 초대장</a></li>
+					<li><a href="{{url_for('Event')}}" {% if path == 'Event' %} class="active" {% endif %}>행사 초대장</a></li>
+					<li><a href="{{url_for('Thanks')}}" {% if path == 'Thanks' %} class="active" {% endif %}>모바일 감사장</a></li>
 				</ul>
 			</div>
 			<div class="contents">

@@ -2,6 +2,7 @@ from flask import Flask, request, redirect
 from flask import render_template
 from flask_mail import Mail, Message
 from datetime import date
+from flask_mobility import Mobility
 import requests
 
 app = Flask(__name__)
@@ -14,25 +15,45 @@ app.config["MAIL_USE_TLS"] = False
 app.config["MAIL_USE_SSL"] = True
 
 email = Mail(app)
-
-@app.route('/test/<urlPath>', methods = ["get"])
-def test(urlPath):
-    path = 'test'
-    return render_template(urlPath + '.html', path=path)
+Mobility(app)
 
 @app.route('/', methods = ["get"])
 def Index():
     path = 'Index'
     today = date.today().year
     return render_template('Index.html', path=path, today=today)
-    
+
+@app.route('/Wedding', methods = ["get"])
+def Wedding():
+    path = 'Wedding'
+    today = date.today().year
+    return render_template('Wedding.html', path=path, today=today)
+
+@app.route('/Baby', methods = ["get"])
+def Baby():
+    path = 'Baby'
+    today = date.today().year
+    return render_template('Baby.html', path=path, today=today)
+
+@app.route('/Event', methods = ["get"])
+def Event():
+    path = 'Event'
+    today = date.today().year
+    return render_template('Event.html', path=path, today=today)
+
+@app.route('/Thanks', methods = ["get"])
+def Thanks():
+    path = 'Thanks'
+    today = date.today().year
+    return render_template('Thanks.html', path=path, today=today)
+
+@app.route('/test/<urlPath>', methods = ["get"])
+def test(urlPath):
+    path = 'test'
+    return render_template(urlPath + '.html', path=path)
+
 @app.route('/', methods = ["post"])
 def IndexPost():
-    #now = datetime.datetime.now()
-    #nowTime = now.strftime('%H:%M:%S')
-    #uploadFileName = request.POST['weddingdate'] + request.POST['weddingtime'] + nowTime
-    # print(uploadFileName)
-
     emailBody = ""
     emailBody = emailBody = "<style>	body{background-color:#fff;}	input {width:305px;padding:10px 5px;margin:5px 0px;border:1px solid #eaeaea;-webkit-appearance: none;   -webkit-border-radius: 0;}	td{text-align:left;border:1px solid #eaeaea;}	.label{font-size:12px;color:#000;font-weight:normal;}</style>"
     emailBody = emailBody + \
@@ -155,11 +176,6 @@ def IndexPost():
         recipients=["joowon1028@gmail.com"],
     )
     email.send(msg)
-
-    #email = EmailMessage(
-    #    request.form['order_name'] + " - 어반인카드 주문서", emailBody, to=['joowon1028@gmail.com'])
-    #email.content_subtype = "html"
-    #email.send()
 
     return redirect('/')
 
