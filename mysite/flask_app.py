@@ -47,10 +47,11 @@ def Thanks():
     today = date.today().year
     return render_template('Thanks.html', path=path, today=today)
 
-@app.route('/test/<urlPath>', methods = ["get"])
-def test(urlPath):
-    path = 'test'
-    return render_template(urlPath + '.html', path=path)
+@app.route('/sample/<urlPath>', methods = ["get"])
+def sample(urlPath):
+    path = 'sample'
+    type = urlPath
+    return render_template('/sample/'+ urlPath + '.html', path=path,type=type)
 
 @app.route('/', methods = ["post"])
 def IndexPost():
