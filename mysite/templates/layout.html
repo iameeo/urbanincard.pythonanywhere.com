@@ -41,11 +41,11 @@
          <div class="wrap">
 			<div class="nav">
 				<ul>
-					<li><a href="{{url_for('Index')}}" {% if path == 'Index' %} class="active" {% endif %}>홈</a></li>
-					<li><a href="{{url_for('Wedding')}}" {% if path == 'Wedding' %} class="active" {% endif %}>모바일 초대장</a></li>
-					<li><a href="{{url_for('Baby')}}" {% if path == 'Baby' %} class="active" {% endif %}>돌잔치 초대장</a></li>
-					<li><a href="{{url_for('Event')}}" {% if path == 'Event' %} class="active" {% endif %}>행사 초대장</a></li>
-					<li><a href="{{url_for('Thanks')}}" {% if path == 'Thanks' %} class="active" {% endif %}>모바일 감사장</a></li>
+					<li><a href="{{url_for('Index')}}" {% if model.path == 'Index' %} class="active" {% endif %}>홈</a></li>
+					<li><a href="{{url_for('Wedding')}}" {% if model.path == 'Wedding' %} class="active" {% endif %}>모바일 초대장</a></li>
+					<li><a href="{{url_for('Baby')}}" {% if model.path == 'Baby' %} class="active" {% endif %}>돌잔치 초대장</a></li>
+					<li><a href="{{url_for('Event')}}" {% if model.path == 'Event' %} class="active" {% endif %}>행사 초대장</a></li>
+					<li><a href="{{url_for('Thanks')}}" {% if model.path == 'Thanks' %} class="active" {% endif %}>모바일 감사장</a></li>
 				</ul>
 			</div>
 			<div class="contents">
@@ -55,7 +55,7 @@
 			</div>
 			<div class="footer">
 				<div style="padding:20px 0px;text-align:center;">
-					© {{today}} URBAN-INCARD. All rights reserved.
+					© {{model.today}} URBAN-INCARD. All rights reserved.
 				</div>
 			</div>
 		 </div>

@@ -17,21 +17,22 @@ app.config["MAIL_USE_SSL"] = True
 email = Mail(app)
 Mobility(app)
 
-@app.route('/', methods = ["get"])
-def Index():
-    path = 'Index'
-    today = date.today().year
+def init(path):
     model = {
         "path" : path
-        ,"today" : today
+        ,"today" : date.today().year
     }
+    return model
+
+@app.route('/', methods = ["get"])
+def Index():
+    model = init("Index")
     return render_template('Index.html', model=model)
 
 @app.route('/Wedding', methods = ["get"])
 def Wedding():
-    path = 'Wedding'
-    today = date.today().year
-    return render_template('Wedding.html', path=path, today=today)
+    model = init("Wedding")
+    return render_template('Wedding.html', model=model)
 
 @app.route('/Baby', methods = ["get"])
 def Baby():
