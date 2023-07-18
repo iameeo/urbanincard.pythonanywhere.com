@@ -15,6 +15,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://urban-incard.github.io/common/swiper.min.css">
 <style>
     * {
         padding: 0px;
@@ -65,6 +67,44 @@
     .contents > .gallery {
         border: 1px solid #eaeaea;
     }
+
+    .contents>.gallery {
+    border: 0px solid #eaeaea;
+    height: 500px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-top {
+    height: 80%;
+    width: 100%;
+}
+
+.gallery-thumbs {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
 
     .contents > .cullender {
         border: 1px solid #eaeaea;
@@ -272,7 +312,17 @@
             </div>
             <div class="gallery">
                 <h1>GALLERY</h1>
-                <div>gallery</div>
+                <!-- Swiper -->
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                </div>
+                <div class="swiper-container gallery-thumbs">
+                    <div class="swiper-wrapper"></div>
+                </div>
+                <!-- Swiper -->
             </div>
             <div class="cullender">
                 <h1>CALENDAR</h1>
@@ -295,6 +345,7 @@
 </body>
 
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://urban-incard.github.io/common/swiper.min.js"></script>
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c8dcf002e3cb41a603da7f0d485b5f0b"></script>
 <script>
 function map_set(lat, lng) {
@@ -543,6 +594,52 @@ function CalendarControl() {
   
   const calendarControl = new CalendarControl();
 
+  var gallery_url = [];
+        gallery_url.push("https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1519123648360-eeb65861dc66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1553102674-af685bb5fe40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+
+        gallery_url_set(gallery_url);
+
+  function gallery_init() {
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs
+        }
+    });
+}
+
+  function gallery_url_set(_gallery_url) {
+    var html = "";
+    for (var i = 0; i < _gallery_url.length; i++) {
+        //html += '<div class="swiper-slide" style="background-image:url(' + _gallery_url[i] + ')"></div>';
+        html += '<div class="swiper-slide" style="background-position: center;    background-size: contain;    background-repeat: no-repeat;background-image:url(' + _gallery_url[i] + ')"></div>';
+    }
+
+    $(".swiper-wrapper").html(html);
+
+    gallery_init();
+
+    $(".swiper-wrapper").eq(0).find(".swiper-slide").click(function() {
+        var img_url = $(this).css("background-image").replace('url("', '').replace('")', '');
+        //location.href = img_url;
+    });
+
+    $(".swiper-wrapper").css("width", 99999);
+}
 
 </script>
 
