@@ -64,14 +64,14 @@
         border: 1px solid #eaeaea;
     }
 
-    .contents > .gallery {
+    .contents > .gallery_wrap {
         border: 1px solid #eaeaea;
     }
 
-    .contents>.gallery {
-    border: 0px solid #eaeaea;
-    height: 500px;
-}
+    .contents > .gallery_wrap > .gallery {
+        border: 1px solid #eaeaea;
+        height:500px;
+    }
 
 .swiper-container {
     width: 100%;
@@ -310,19 +310,21 @@
                 <div>김병옥, 최혜옥 의 장남 도진</div>
                 <div>이민기, 정소민 의 장녀 나영</div>
             </div>
-            <div class="gallery">
+            <div class="gallery_wrap">
                 <h1>GALLERY</h1>
-                <!-- Swiper -->
-                <div class="swiper-container gallery-top">
-                    <div class="swiper-wrapper"></div>
-                    <!-- Add Arrows -->
-                    <div class="swiper-button-next swiper-button-white"></div>
-                    <div class="swiper-button-prev swiper-button-white"></div>
+                <div class="gallery">
+                    <!-- Swiper -->
+                    <div class="swiper-container gallery-top">
+                      <div class="swiper-wrapper"></div>
+                      <!-- Add Arrows -->
+                      <div class="swiper-button-next swiper-button-white"></div>
+                      <div class="swiper-button-prev swiper-button-white"></div>
+                  </div>
+                  <div class="swiper-container gallery-thumbs">
+                      <div class="swiper-wrapper"></div>
+                  </div>
+                  <!-- Swiper -->
                 </div>
-                <div class="swiper-container gallery-thumbs">
-                    <div class="swiper-wrapper"></div>
-                </div>
-                <!-- Swiper -->
             </div>
             <div class="cullender">
                 <h1>CALENDAR</h1>
@@ -595,10 +597,12 @@ function CalendarControl() {
   const calendarControl = new CalendarControl();
 
   var gallery_url = [];
-        gallery_url.push("https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
         gallery_url.push("https://images.unsplash.com/photo-1519123648360-eeb65861dc66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80");
         gallery_url.push("https://images.unsplash.com/photo-1553102674-af685bb5fe40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-        gallery_url.push("https://images.unsplash.com/photo-1541250848049-b4f7141dca3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1634729108541-516d16ddceec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1509927083803-4bd519298ac4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
 
         gallery_url_set(gallery_url);
 
