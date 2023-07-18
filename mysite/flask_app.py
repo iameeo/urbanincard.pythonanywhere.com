@@ -21,7 +21,11 @@ Mobility(app)
 def Index():
     path = 'Index'
     today = date.today().year
-    return render_template('Index.html', path=path, today=today)
+    model = {
+        "path" : path
+        ,"today" : today
+    }
+    return render_template('Index.html', model=model)
 
 @app.route('/Wedding', methods = ["get"])
 def Wedding():

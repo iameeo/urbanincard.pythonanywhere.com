@@ -56,13 +56,15 @@ iframe{border:0;}
 
 .wrap{}
 
+.nav{padding:20px 0px;}
+.nav > ul{overflow:hidden;width:480px;margin:0 auto;}
+.nav > ul > li{float:left;padding:10px;}
+.nav > ul > li > a {color:#5d5d5d;font-size:16px;}
+.nav > ul > li > a.active{color:#f6c20c;font-weight:bold;}
+.nav > ul > li > a:hover{color:#636363;font-weight:bold;}
+
 @media screen and (min-width: 1024px){
-	.nav{padding:20px 0px;}
-	.nav > ul{overflow:hidden;width:480px;margin:0 auto;}
-	.nav > ul > li{float:left;padding:10px;}
-	.nav > ul > li > a {color:#5d5d5d;font-size:16px;}
-	.nav > ul > li > a.active{color:#f6c20c;font-weight:bold;}
-	.nav > ul > li > a:hover{color:#636363;font-weight:bold;}
+
 }
 
 @media screen and (max-width: 1023px){
