@@ -59,7 +59,7 @@ def Order():
     today = date.today().year
     return render_template('Order.html', path=path, today=today)
 
-@app.route('/Order/Send', methods = ["post"])
+@app.route('/Order/', methods = ["post"])
 def OrderSend():
     emailBody = ""
     emailBody = emailBody = "<style>	body{background-color:#fff;}	input {width:305px;padding:10px 5px;margin:5px 0px;border:1px solid #eaeaea;-webkit-appearance: none;   -webkit-border-radius: 0;}	td{text-align:left;border:1px solid #eaeaea;}	.label{font-size:12px;color:#000;font-weight:normal;}</style>"
