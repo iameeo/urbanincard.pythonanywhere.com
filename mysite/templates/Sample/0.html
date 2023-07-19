@@ -47,16 +47,19 @@
 
     .contents h1 {
         text-align: center;
-        color:#eaeaea;
+        color:#6c6c64;
+        padding:5px 0px;
     }
 
     .contents > .main {
-        border: 1px solid #eaeaea;
+        border: 0px solid #eaeaea;
+        padding:10px 0px;
     }
 
     .contents > .information {
         text-align: center;
-        border: 1px solid #eaeaea;
+        border: 0px solid #eaeaea;
+        padding:10px 0px;
     }
 
     .contents > .contact {
@@ -292,17 +295,34 @@
     <div class="wrap">
         <div class="contents">
             <div class="main">
-                <img src="https://dev-www.barunsonmcard.com/upload/invitation/230714/388012/f6e2eda3-9747-4adc-9e6b-da0d97ad0da7.png" style="width:100%;">
+              <div style="overflow: hidden;">
+                <div style="float:left;width:40%;">
+                  <div style="padding:30px;">
+                    <div><span style="font-size: 30px;">김도진</span></div>
+                    <div><span style="font-size: 18px;">&</span></div>
+                    <div><span style="font-size: 30px;">이나영</span></div>
+                  </div>
+                </div>
+                <div style="float:left;width:60%;position:relative;">
+                  <span style="font-size: 18px;top: 115px;right:35px;position: absolute;">{{model.today}}.05.14 SAT 1:00PM</span>
+                </div>
+              </div>
+              <div>
+                <img src="/static/img/type0_main.jpg" style="width:100%;">
+              </div>
             </div>
             <div class="information">
                 <h1>INFORMATION</h1>
-                <div>
-                    서로가 마주보며 다져온 사랑을<br/>
-                    이제 함께 한 곳을 바라보며<br/>
-                    걸어갈 수 있는 큰 사랑으로 키우고자 합니다.<br/>
-                    저희 두 사람이 사랑의 이름으로<br/>
-                    지켜나갈 수 있게 앞날을<br/>
-                    축복해 주시면 감사하겠습니다.<br/>
+                <div style="font-size: 16px;">
+                  서로가 마주보며 다져온 사랑을<br/>
+                  이제 함게 한 곳을 바라보며<br/>
+                  걸어갈 수 있는 큰 사랑으로<br/>
+                  키우고자 합니다.<br/><br/>
+                  
+                  저희 두 사람이 사랑의 이름으로<br/>
+                  지켜나갈 수 있도록<br/>
+                  앞날을 축복해 주시면<br/>
+                  감사하겠습니다.
                 </div>
             </div>
             <div class="contact">
