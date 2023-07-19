@@ -24,43 +24,48 @@ def init(path):
     }
     return model
 
-@app.route('/', methods = ["get"])
+@app.route('/')
 def Index():
     model = init("Index")
     return render_template(model.get("path") + '.html', model=model)
 
-@app.route('/Wedding', methods = ["get"])
+@app.route('/Wedding')
 def Wedding():
     model = init("Wedding")
     return render_template(model.get("path") + '.html', model=model)
 
-@app.route('/Baby', methods = ["get"])
+@app.route('/Baby')
 def Baby():
     model = init("Baby")
     return render_template(model.get("path") + '.html', model=model)
 
-@app.route('/Event', methods = ["get"])
+@app.route('/Event')
 def Event():
     model = init("Event")
     return render_template(model.get("path") + '.html', model=model)
 
-@app.route('/Thanks', methods = ["get"])
+@app.route('/Thanks')
 def Thanks():
     model = init("Thanks")
     return render_template(model.get("path") + '.html', model=model)
 
-@app.route('/Sample/<urlPath>', methods = ["get"])
+@app.route('/Sample/<urlPath>')
 def sample(urlPath):
     model = init("Sample")
     return render_template(model.get("path") + '/'+ urlPath +'.html', model=model)
 
-@app.route('/Order/', methods = ["get"])
+@app.route('/Order/')
 def Order():
-    model = init("Sample")
-    return render_template(model.get("path") + '.html', model=model)
+    model = init("Order")
+    return render_template(model.get("path") + '/Order.html', model=model)
 
 @app.route('/Order/Post', methods = ["post"])
 def OrderPost():
+    OrderSendMail()
+    return redirect('/')
+
+#주문 메일 전송
+def OrderSendMail():
     emailBody = ""
     emailBody = emailBody = "<style>	body{background-color:#fff;}	input {width:305px;padding:10px 5px;margin:5px 0px;border:1px solid #eaeaea;-webkit-appearance: none;   -webkit-border-radius: 0;}	td{text-align:left;border:1px solid #eaeaea;}	.label{font-size:12px;color:#000;font-weight:normal;}</style>"
     emailBody = emailBody + \
@@ -176,15 +181,14 @@ def OrderPost():
 
     title = request.form['order_name'] + " - 어반인카드 주문서"
     content = emailBody
+    
     msg = Message(
         f"{title}",
-        body=f"{content}",
+        html=f"{content}",
         sender="urban.incard@gmail.com",
         recipients=["joowon1028@gmail.com"],
     )
     email.send(msg)
-
-    return redirect('/')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='5000', debug=True)
