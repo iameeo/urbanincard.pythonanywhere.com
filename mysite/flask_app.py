@@ -36,33 +36,28 @@ def Wedding():
 
 @app.route('/Baby', methods = ["get"])
 def Baby():
-    path = 'Baby'
-    today = date.today().year
-    return render_template('Baby.html', path=path, today=today)
+    model = init("Baby")
+    return render_template('Baby.html', model=model)
 
 @app.route('/Event', methods = ["get"])
 def Event():
-    path = 'Event'
-    today = date.today().year
-    return render_template('Event.html', path=path, today=today)
+    model = init("Event")
+    return render_template('Event.html', model=model)
 
 @app.route('/Thanks', methods = ["get"])
 def Thanks():
-    path = 'Thanks'
-    today = date.today().year
-    return render_template('Thanks.html', path=path, today=today)
+    model = init("Thanks")
+    return render_template('Thanks.html', model=model)
 
 @app.route('/Sample/<urlPath>', methods = ["get"])
 def sample(urlPath):
-    path = 'Sample'
-    type = urlPath
-    return render_template('/Sample/'+ urlPath + '.html', path=path,type=type)
+    model = init("Sample")
+    return render_template('Sample.html', model=model)
 
 @app.route('/Order/', methods = ["get"])
 def Order():
-    path = 'Order'
-    today = date.today().year
-    return render_template('/Order/Order.html', path=path, today=today)
+    model = init("Sample")
+    return render_template('/Order/Order.html', model=model)
 
 @app.route('/Order/Post', methods = ["post"])
 def OrderPost():
