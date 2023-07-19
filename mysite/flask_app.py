@@ -27,37 +27,37 @@ def init(path):
 @app.route('/', methods = ["get"])
 def Index():
     model = init("Index")
-    return render_template('Index.html', model=model)
+    return render_template(model.get("path") + '.html', model=model)
 
 @app.route('/Wedding', methods = ["get"])
 def Wedding():
     model = init("Wedding")
-    return render_template('Wedding.html', model=model)
+    return render_template(model.get("path") + '.html', model=model)
 
 @app.route('/Baby', methods = ["get"])
 def Baby():
     model = init("Baby")
-    return render_template('Baby.html', model=model)
+    return render_template(model.get("path") + '.html', model=model)
 
 @app.route('/Event', methods = ["get"])
 def Event():
     model = init("Event")
-    return render_template('Event.html', model=model)
+    return render_template(model.get("path") + '.html', model=model)
 
 @app.route('/Thanks', methods = ["get"])
 def Thanks():
     model = init("Thanks")
-    return render_template('Thanks.html', model=model)
+    return render_template(model.get("path") + '.html', model=model)
 
 @app.route('/Sample/<urlPath>', methods = ["get"])
 def sample(urlPath):
     model = init("Sample")
-    return render_template('Sample.html', model=model)
+    return render_template(model.get("path") + '/'+ urlPath +'.html', model=model)
 
 @app.route('/Order/', methods = ["get"])
 def Order():
     model = init("Sample")
-    return render_template('/Order/Order.html', model=model)
+    return render_template(model.get("path") + '.html', model=model)
 
 @app.route('/Order/Post', methods = ["post"])
 def OrderPost():
