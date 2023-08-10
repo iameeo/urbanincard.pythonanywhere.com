@@ -116,7 +116,7 @@
     }
 
     .contents > .location {
-        border: 1px solid #eaeaea;
+        border: 0px solid #eaeaea;
     }
 
     .contents > .location > #map {
@@ -358,14 +358,15 @@
             <div class="location">
                 <h1>LOCATION</h1>
                 <div id="map"></div>
-                <div>
-                    <div>서울 강남구 역삼1동 607-21</div>
-                    <div>루시컨벤션 2층 화이트홀</div>
-                    <div>02-556-1005</div>
+                <div><a href="#" id="find_map" target="_blank">지도바로가기</a></div>
+                <div class="info" style="padding:10px 0px;">
+                    <div style="font-size:16px;">루시컨벤션 2층 화이트홀</div>
+                    <div style="font-size:16px;">서울 강남구 역삼1동 607-21</div>
+                    <div style="font-size:12px;">02-556-1005</div>
                 </div>
             </div>
             <div class="footer">
-                footer
+                어반인카드
             </div>
         </div>
     </div>
@@ -388,6 +389,7 @@ function map_set(lat, lng) {
         position: markerPosition
     });
     marker.setMap(map);
+    $("#find_map").attr("href", "https://m.map.naver.com/map.naver?lat="+ lat +"&lng="+ lng);
 }
 
 var lat = 37.5050412;
@@ -623,12 +625,12 @@ function CalendarControl() {
   const calendarControl = new CalendarControl();
 
   var gallery_url = [];
-        gallery_url.push("https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-        gallery_url.push("https://images.unsplash.com/photo-1519123648360-eeb65861dc66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80");
-        gallery_url.push("https://images.unsplash.com/photo-1553102674-af685bb5fe40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-        gallery_url.push("https://images.unsplash.com/photo-1634729108541-516d16ddceec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-        gallery_url.push("https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-        gallery_url.push("https://images.unsplash.com/photo-1509927083803-4bd519298ac4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1649183424680-464747a8e43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1972&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1513725673171-537abba17912?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1607357910286-1ff94ac13c24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80");
+        gallery_url.push("https://images.unsplash.com/flagged/photo-1562616382-b884d7188d8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80");
+        gallery_url.push("https://images.unsplash.com/photo-1576694667642-6f289dd54187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80");
 
         gallery_url_set(gallery_url);
 
